@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    height: none;
+    flex-grow: 5;
+    color: rgb(109, 109, 109);
+}
+
+.divContainer {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: larger;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.menu {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    padding: 10px;
+    border-style: dotted;
+    
+}
+.rubrik {
+    font-size: 50px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px; 
+}
+
+.bigContainer {
+    margin: 50px; 
+
+}
+
+.indexPage {
+    margin: 50px; 
+    text-align: center;
+    line-height: 1.6;
+}
+
+.litleDiv {
+    
+    justify-content: center;
+}
+
+.mediaDiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; 
+}
+
+.info {
+    gap:20px; 
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.litleContainer {
+    gap: 15px; 
+    display: flex;
+    margin: 100px; 
+    border: 2px solid black;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 5px 10px #888888;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.productImg {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+table {
+    margin-bottom: 20px;
+}
+
+.produktDiv {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.produktContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 70px; 
+}
+
+.produktImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+p {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+img {
+    width: 80px; 
+    height: 120px;
+}
+
+.media {
+    width: 350px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+.postBild {
+    width: 150px;
+    height: 200px;
+    border-radius: 25px;
+
+}
+
+.postInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.postsInfo {
+    display: flex;
+    flex-direction: column;
+    gap:40px; 
+}
+
+.blogTitel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+
+
+
+
