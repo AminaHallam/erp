@@ -37,27 +37,8 @@
 
             <?php
 
-            $curl = curl_init();
-
-            curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://localhost:3000/labb2-AH/wp-json/wp/v2/media?page=1&per_page=2&oauth_consumer_key=ck_61b87dc73ff2e829f4447ab57c3ea638a5a97d54&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1650699806&oauth_nonce=lgi6aMSJFOv&oauth_version=1.0&oauth_signature=PqNBoceN8poRMKq8aUut29JsLkQ%253D',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'GET',
-            CURLOPT_HTTPHEADER => array(
-                'Cookie: mailpoet_page_view=%7B%22timestamp%22%3A1650638600%7D'
-            ),
-            ));
-
-            $pictureResponse = curl_exec($curl);
-
-            curl_close($curl);
-            
-            $postBild = json_decode($pictureResponse); 
+            $postBild = file_get_contents("./JSON/postMedia.json");  
+            $postBild = json_decode($postBild, false);
 
 
             for ($i=0; $i < count($postBild); $i++) { 
@@ -84,32 +65,9 @@
 
             <?php
             
-            
-
-                $curl = curl_init();
+            $postData = file_get_contents("./JSON/posts.json");  
+            $postData = json_decode($postData, false);
                 
-                curl_setopt_array($curl, array(
-                CURLOPT_URL => 'http://localhost:3000/labb2-AH/wp-json/wp/v2/posts?oauth_consumer_key=ck_61b87dc73ff2e829f4447ab57c3ea638a5a97d54&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1650709547&oauth_nonce=qZAGZM101Oe&oauth_version=1.0&oauth_signature=KqBAP%252B58UpivwiJYxcV9Ilewq8M%253D',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => 'GET',
-                CURLOPT_HTTPHEADER => array(
-                    'Cookie: mailpoet_page_view=%7B%22timestamp%22%3A1650714466%7D'
-                ),
-                ));
-                
-                $response = curl_exec($curl);
-                
-                curl_close($curl);
-            
-                
-
-    
-                $post_list = json_decode($response); 
     
                 ?>
     
@@ -122,8 +80,8 @@
         
                         <?php 
         
-                        for ($i=0; $i < count($post_list); $i++) { 
-                            $post = $post_list[$i]; 
+                        for ($p=0; $p < count($postData); $p++) { 
+                            $post = $postData[$p]; 
         
                             $titel = $post->title->rendered; 
 

@@ -116,7 +116,7 @@ table {
 .produktContainer {
     display: flex;
     flex-direction: column;
-    gap: 70px; 
+    gap: 60px; 
 }
 
 .produktImg {

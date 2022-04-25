@@ -29,6 +29,16 @@
     <div class="bigContainer">
 
         <div class="litleContainer">
+                
+                <?php 
+                
+
+                $productList = file_get_contents("./JSON/products.json");  
+                $productList = json_decode($productList, false);
+                
+                
+                ?>
+
 
             <div class="productImg">
 
@@ -36,45 +46,21 @@
 
                     <?php
 
-                    
 
-                    $curl = curl_init();
+                    for ($i=0; $i < count($productList); $i++) { 
+                        $productPicture = $productList[$i]->images; 
 
-                    curl_setopt_array($curl, array(
-                    CURLOPT_URL => 'http://localhost:3000/labb2-AH/wp-json/wp/v2/media?page=2&per_page=5&oauth_consumer_key=ck_61b87dc73ff2e829f4447ab57c3ea638a5a97d54&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1650725948&oauth_nonce=GJ2Ct7TTyPE&oauth_version=1.0&oauth_signature=MHuCkWQ77OiIE3Oe0d0cAKgohk4%253D',
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => '',
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => 'GET',
-                    CURLOPT_HTTPHEADER => array(
-                        'Cookie: mailpoet_page_view=%7B%22timestamp%22%3A1650733052%7D'
-                    ),
-                    ));
-
-                    $pictureResponse = curl_exec($curl);
-
-                    curl_close($curl);
+                            for ($p=0; $p < count($productPicture); $p++) { 
+                                $img = $productPicture[$p]; 
+                                $media = $img->src; ?>
+                                
+                                <img class="postBild" src=" <?php echo $media ?> " alt="ProduktBild">
 
 
+                            <?php 
+                            }
+                            ?>
 
-                    $produktBild = json_decode($pictureResponse); 
-
-
-                    for ($i=0; $i < count($produktBild); $i++) { 
-                    $bilder = $produktBild[$i]; 
-
-                    $media = $bilder->guid->rendered;
-                    
-                    ?>
-
-
-
-                    <img class="postBild" src=" <?php echo $media ?> " alt="ProduktBild">
-                    
-                    
 
                     <?php
                     }
@@ -84,45 +70,14 @@
 
             </div>
 
-            <!-- Hämtar in produktens information  -->
-
-            <?php 
-
-
-
-                $curl = curl_init();
-
-                curl_setopt_array($curl, array(
-                CURLOPT_URL => 'http://localhost:3000/labb2-AH/wp-json/wc/v3/products?oauth_consumer_key=ck_61b87dc73ff2e829f4447ab57c3ea638a5a97d54&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1650725908&oauth_nonce=4qVsVMkuXAa&oauth_version=1.0&oauth_signature=4LPs9fa4SgZuQd8pWqkcUBUml6c%253D',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => 'GET',
-                CURLOPT_HTTPHEADER => array(
-                    'Cookie: mailpoet_page_view=%7B%22timestamp%22%3A1650733052%7D'
-                ),
-                ));
-
-                $response = curl_exec($curl);
-
-                curl_close($curl);
-
-
-                
-
-                $productList = json_decode($response); 
-
-
-            ?>
 
             <div class="litleDiv">
                 
                         
                 
                 <div class="produktContainer">
+
+                    <!-- Hämtar in produktens information  -->
 
                     <?php 
 
@@ -133,17 +88,24 @@
 
                             $link = $product->permalink;
                             $productName = $product->name; 
-
+                            
                             ?>
 
                             <h3>Produkt: <a href=" <?php echo $link ?> "><?php echo $productName ?></a></h3>
 
                             <?php
+                            echo "<tr><td><b>Produktens pris: </b></td><td>$product->price kr</td></tr>";   
+                            
+                            $kategory = $product->categories;
 
-                            /* OBS!! Fixa categories -- Ej lyckats få ut det */
-                            /* echo "<tr><td>Kategori:</td><td>$product->categories</td></tr>"; */
+                            for ($a=0; $a < count($kategory); $a++) { 
+                                $productCategory = $kategory[$a]; 
+                                $categories = $productCategory->name; 
 
-                            echo "<tr><td><b>Produktens pris: </b></td><td>$product->price kr</td></tr>"; 
+                                echo "<tr><td><b>Kategori: </b></td><td>$categories</td></tr>"; 
+
+
+                            }
 
 
 

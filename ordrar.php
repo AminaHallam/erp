@@ -35,29 +35,9 @@
             <?php
 
 
-                $curl = curl_init();
+                $orderList = file_get_contents("./JSON/orders.json");  
+                $orderList = json_decode($orderList, false);
 
-                curl_setopt_array($curl, array(
-                CURLOPT_URL => 'http://localhost:3000/labb2-AH/wp-json/wc/v3/orders?oauth_consumer_key=ck_61b87dc73ff2e829f4447ab57c3ea638a5a97d54&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1650728686&oauth_nonce=nehKzAOOI09&oauth_version=1.0&oauth_signature=melbwk8HZGssXbC3gd4lDo3VagA%253D',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => 'GET',
-                CURLOPT_HTTPHEADER => array(
-                    'Cookie: mailpoet_page_view=%7B%22timestamp%22%3A1650735885%7D'
-                ),
-                ));
-
-                $response = curl_exec($curl);
-
-                curl_close($curl);
-
-
-
-                $orderList = json_decode($response);
             ?> 
 
 

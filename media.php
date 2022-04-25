@@ -34,27 +34,8 @@
 
             <?php
 
-                $curl = curl_init();
-
-                curl_setopt_array($curl, array(
-                CURLOPT_URL => 'http://localhost:3000/labb2-AH/wp-json/wp/v2/media?oauth_consumer_key=ck_61b87dc73ff2e829f4447ab57c3ea638a5a97d54&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1650629308&oauth_nonce=rbyZnh1L6Zw&oauth_version=1.0&oauth_signature=NpWKrhSkB8DmFBTPte9i9gjPBVQ%253D',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => 'GET',
-                CURLOPT_HTTPHEADER => array(
-                    'Cookie: mailpoet_page_view=%7B%22timestamp%22%3A1650628175%7D'
-                ),
-                ));
-
-                $response = curl_exec($curl);
-
-                curl_close($curl);
-
-                $mediaList = json_decode($response);
+                $mediaList = file_get_contents("./JSON/allMedia.json");  
+                $mediaList = json_decode($mediaList, false);
 
                 ?> 
 
