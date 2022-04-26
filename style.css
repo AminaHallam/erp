@@ -60,12 +60,6 @@ header {
     justify-content: center;
 }
 
-.mediaDiv {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px; 
-}
 
 .info {
     gap:20px; 
@@ -82,7 +76,7 @@ h3 {
 .litleContainer {
     gap: 15px; 
     display: flex;
-    margin: 100px; 
+    margin: 50px; 
     border: 2px solid black;
     padding: 40px;
     border-radius: 25px;
@@ -110,13 +104,13 @@ table {
     width: 80%;
     display: flex;
     flex-direction: column;
-
+    
 }
 
 .produktContainer {
     display: flex;
     flex-direction: column;
-    gap: 60px; 
+    gap: 63px; 
 }
 
 .produktImg {
@@ -134,13 +128,17 @@ td {
 }
 
 img {
-    width: 80px; 
     height: 120px;
 }
 
+.mediaDiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; 
+}
+
 .media {
-    width: 350px;
-    height: 400px;
     border-radius: 50%;
 }
 

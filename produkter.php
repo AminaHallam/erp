@@ -94,7 +94,7 @@
                             <h3>Produkt: <a href=" <?php echo $link ?> "><?php echo $productName ?></a></h3>
 
                             <?php
-                            echo "<tr><td><b>Produktens pris: </b></td><td>$product->price kr</td></tr>";   
+                            echo "<tr><td><b>Produktens pris: </b></td><td><b> $product->price kr</b></td></tr>";   
                             
                             $kategory = $product->categories;
 
@@ -102,8 +102,12 @@
                                 $productCategory = $kategory[$a]; 
                                 $categories = $productCategory->name; 
 
-                                echo "<tr><td><b>Kategori: </b></td><td>$categories</td></tr>"; 
-
+                                if($categories == 'Sportutrustning') {
+                                
+                                    echo "<tr><td><b>Kategori: </b></td><td><p style='background-color:#673ab773;'> $categories </p></td></tr>"; 
+                                } else {
+                                    echo "<tr><td><b>Kategori: </b></td><td><p style='background-color:#a4dba478;'> $categories </p></td></tr>";
+                                }
 
                             }
 

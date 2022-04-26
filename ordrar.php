@@ -62,7 +62,7 @@
                             }
 
 
-                            echo "<tr><td><b>Totalbelopp:</b></td><td><p> $order->total kr</p></td></tr>";
+                            echo "<tr><td><b>Totalbelopp:</b></td><td><p><b> $order->total kr</b></p></td></tr>";
                             echo "<tr><td><b>Datum:</b></td><td>$order->date_created</td></tr><br>"; 
                         echo "</table>"; 
                     }
