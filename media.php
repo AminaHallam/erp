@@ -21,7 +21,6 @@
         </div>
         <hr style="width:70%;margin: auto;">
 
-
     </header>
 
     <h1 class="rubrik">Media</h1>
@@ -51,9 +50,7 @@
 
                         ?>
 
-                            <img class="media" src=" <?php echo $media ?> " alt="Instruktions-Doc">
-                            
-                        
+                            <img class="media" src=" <?php echo $media ?> " alt="Instruktions-Doc">   
                     
                     <?php }
 

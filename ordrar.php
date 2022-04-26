@@ -34,17 +34,13 @@
 
             <?php
 
-
                 $orderList = file_get_contents("./JSON/orders.json");  
                 $orderList = json_decode($orderList, false);
 
             ?> 
 
-
-
                 <div class="litleDiv">
-                    
-
+                
                     <?php
 
                     for ($i=0; $i < count($orderList); $i++) { 
@@ -60,8 +56,6 @@
                             } else {
                                 echo "<tr><td><b>Status:</b></td><td><p style='background-color:#a4dba4; border: 1px solid black;'> $orderStatus </p></td></tr>";
                             }
-
-
                             echo "<tr><td><b>Totalbelopp:</b></td><td><p><b> $order->total kr</b></p></td></tr>";
                             echo "<tr><td><b>Datum:</b></td><td>$order->date_created</td></tr><br>"; 
                         echo "</table>"; 

@@ -25,8 +25,6 @@
 
     <h1 class="rubrik">Posts</h1>
 
-
-
     <div class="bigContainer">
 
         <div class="litleContainer">
@@ -46,18 +44,12 @@
 
                 $media = $bilder->guid->rendered; ?>
 
-            
-
-                <img class="postBild" src=" <?php echo $media ?> " alt="Media Galleri">
-               
-                
+                <img class="postBild" src=" <?php echo $media ?> " alt="Media Galleri">  
 
             <?php
             }
             ?>
-            
-            
-            
+         
             </div>
 
 
@@ -66,16 +58,12 @@
             <?php
             
             $postData = file_get_contents("./JSON/posts.json");  
-            $postData = json_decode($postData, false);
-                
+            $postData = json_decode($postData, false);     
     
-                ?>
+            ?>
     
     
                 <div class="litleDiv">
-    
-               
-    
                     <div class="postsInfo">
         
                         <?php 
@@ -98,15 +86,9 @@
 
                 </div>
 
-        </div>
-
-
-
-            
+        </div>     
 
     </div>
-
-
     
 </body>
 </html>
