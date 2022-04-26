@@ -40,11 +40,8 @@
 
             ?> 
 
-
-
                 <div class="litleDiv">
                     
-
                     <?php
 
                     for ($i=0; $i < count($orderList); $i++) { 
@@ -53,14 +50,13 @@
                         echo "<table>"; 
                             echo "<tr><td><b>OrderID:</b></td><td>$order->id</td></tr>"; 
 
-                            $orderStatus = $order->status; 
-                            if($orderStatus == 'cancelled') {
-                                
-                                echo "<tr><td><b>Status:</b></td><td><p style='background-color:#f56a6a; border: 1px solid black;'> $orderStatus </p></td></tr>"; 
-                            } else {
-                                echo "<tr><td><b>Status:</b></td><td><p style='background-color:#a4dba4; border: 1px solid black;'> $orderStatus </p></td></tr>";
-                            }
-
+                                $orderStatus = $order->status; 
+                                if($orderStatus == 'cancelled') {
+                                    
+                                    echo "<tr><td><b>Status:</b></td><td><p style='background-color:#f56a6a; border: 1px solid black;'> $orderStatus </p></td></tr>"; 
+                                } else {
+                                    echo "<tr><td><b>Status:</b></td><td><p style='background-color:#a4dba4; border: 1px solid black;'> $orderStatus </p></td></tr>";
+                                }
 
                             echo "<tr><td><b>Totalbelopp:</b></td><td><p><b> $order->total kr</b></p></td></tr>";
                             echo "<tr><td><b>Datum:</b></td><td>$order->date_created</td></tr><br>"; 
