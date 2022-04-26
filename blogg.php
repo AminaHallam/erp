@@ -25,38 +25,30 @@
 
     <h1 class="rubrik">Posts</h1>
 
-
-
     <div class="bigContainer">
 
         <div class="litleContainer">
 
             <div class="imgDiv">
 
-             <!-- Hämtar in blogens bilder  -->
+                <!-- Hämtar in blogens bilder  -->
 
-            <?php
+                <?php
 
-            $postBild = file_get_contents("./JSON/postMedia.json");  
-            $postBild = json_decode($postBild, false);
+                $postBild = file_get_contents("./JSON/postMedia.json");  
+                $postBild = json_decode($postBild, false);
 
 
-            for ($i=0; $i < count($postBild); $i++) { 
-                $bilder = $postBild[$i]; 
+                for ($i=0; $i < count($postBild); $i++) { 
+                    $bilder = $postBild[$i]; 
 
-                $media = $bilder->guid->rendered; ?>
+                    $media = $bilder->guid->rendered; ?>
 
-            
+                    <img class="postBild" src=" <?php echo $media ?> " alt="Media Galleri">  
 
-                <img class="postBild" src=" <?php echo $media ?> " alt="Media Galleri">
-               
-                
-
-            <?php
-            }
-            ?>
-            
-            
+                <?php
+                }
+                ?>
             
             </div>
 
@@ -71,11 +63,7 @@
     
                 ?>
     
-    
                 <div class="litleDiv">
-    
-               
-    
                     <div class="postsInfo">
         
                         <?php 
@@ -98,16 +86,9 @@
 
                 </div>
 
-        </div>
+        </div>      
 
-
-
-            
-
-    </div>
-
-
-    
+    </div> 
 </body>
 </html>
 

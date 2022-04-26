@@ -31,21 +31,17 @@
         <div class="litleContainer">
                 
                 <?php 
-                
-
+            
                 $productList = file_get_contents("./JSON/products.json");  
                 $productList = json_decode($productList, false);
-                
-                
+                             
                 ?>
-
 
             <div class="productImg">
 
                 <!-- Hämtar in produktens bilder  -->
 
                     <?php
-
 
                     for ($i=0; $i < count($productList); $i++) { 
                         $productPicture = $productList[$i]->images; 
@@ -56,25 +52,17 @@
                                 
                                 <img class="postBild" src=" <?php echo $media ?> " alt="ProduktBild">
 
-
                             <?php 
                             }
                             ?>
 
-
                     <?php
                     }
                     ?>
-
-
-
             </div>
 
-
             <div class="litleDiv">
-                
-                        
-                
+                               
                 <div class="produktContainer">
 
                     <!-- Hämtar in produktens information  -->
@@ -111,12 +99,9 @@
 
                             }
 
-
-
                         echo "</table>"; 
                     }
                     
-
                     ?> 
                 </div>
                     
@@ -125,7 +110,6 @@
         </div>
 
     </div>
-
 
 </body>
 </html>

@@ -40,8 +40,7 @@
                 ?> 
 
                 <div class="mediaDiv">
-                    
-
+                
                     <?php
 
                     for ($i=0; $i < count($mediaList); $i++) { 
@@ -52,9 +51,7 @@
                         ?>
 
                             <img class="media" src=" <?php echo $media ?> " alt="Instruktions-Doc">
-                            
-                        
-                    
+                                            
                     <?php }
 
                     ?> 
